@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .utpb-clean-wrapper {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #222222;
+      line-height: 1.6;
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    /* Encabezado UTPB */
+    .utpb-hero-header {
+      background-color: #ffffff;
+      color: #111111;
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 6px solid #E05A12;
+      border-bottom: 2px solid #e1e4e8;
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .utpb-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .utpb-falcon-img {
+      max-width: 80px;
+      height: auto;
+    }
+    .utpb-department {
+      color: #E05A12;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+    .utpb-hero-header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #111111;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+    }
+    .utpb-hero-header h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #555555;
+      margin: 0;
+    }
+
+    /* Banner Escritura Creativa */
+    .utpb-writing-banner {
+      position: relative;
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      height: 200px;
+    }
+    .utpb-writing-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75);
+    }
+    .utpb-writing-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45);
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* Tarjeta de Premio */
+    .utpb-award-card {
+      background-color: #FFF3EB;
+      border: 1px solid #FCD8C1;
+      border-radius: 8px;
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .utpb-award-icon {
+      font-size: 2rem;
+    }
+    .utpb-award-text {
+      color: #A33A00;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    /* Títulos de Sección */
+    .utpb-section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111111;
+      border-bottom: 3px solid #E05A12;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Tarjetas de Guías */
+    .utpb-guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .utpb-guide-card {
+      background: #ffffff;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    }
+    .utpb-guide-title {
+      color: #E05A12;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    .utpb-guide-text {
+      color: #555555;
+      font-size: 0.92rem;
+    }
+
+    /* Fechas Importantes */
+    .utpb-dates-container {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+    .utpb-date-card {
+      flex: 1;
+      min-width: 220px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e1e4e8;
+      border-top: 5px solid #E05A12;
+    }
+    .utpb-date-label {
+      color: #666666;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .utpb-date-value {
+      color: #111111;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+    .utpb-date-value span {
+      color: #E05A12;
+    }
+
+    /* Sección de Envío */
+    .utpb-form-wrapper {
+      background-color: #ffffff;
+      border: 1px solid #dcdfe6;
+      border-radius: 10px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .utpb-btn-submit {
+      display: inline-block;
+      background-color: #E05A12;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s ease;
+      margin-top: 10px;
+    }
+    .utpb-btn-submit:hover {
+      background-color: #c44d0e;
+    }
+
+    /* Contacto Footer */
+    .utpb-contact-footer {
+      text-align: center;
+      padding: 15px;
+      color: #666666;
+      font-size: 0.92rem;
+    }
+    .utpb-contact-footer a {
+      color: #E05A12;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .utpb-contact-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="utpb-clean-wrapper">
+
+  <!-- Encabezado UTPB con Logo en Imagen Segura -->
+  <div class="utpb-hero-header">
+    <div class="utpb-logo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/UTPB_Falcons_logo.svg/1200px-UTPB_Falcons_logo.svg.png" alt="UTPB Falcons Logo" class="utpb-falcon-img">
+    </div>
+    <div class="utpb-department">Department of Literature and Languages</div>
+    <h1>The University of Texas Permian Basin</h1>
+    <h2>Spanish Creative Writing Competition for High School Students</h2>
+  </div>
+
+  <!-- Banner Escritura Creativa -->
+  <div class="utpb-writing-banner">
+    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" alt="Creative Writing Literature" class="utpb-writing-img">
+    <div class="utpb-writing-overlay">
+      High school juniors and seniors are encouraged to submit their original creative writing works in Spanish!
+    </div>
+  </div>
+
+  <!-- Premio -->
+  <div class="utpb-award-card">
+    <div class="utpb-award-icon">🏆</div>
+    <div class="utpb-award-text">
+      <strong>Awards & Campus Dinner:</strong> Awards will be presented during a special dinner on the Odessa campus.
+    </div>
+  </div>
+
+  <!-- Guías del Concurso -->
+  <div class="utpb-section-title">Submission Guidelines</div>
+  <div class="utpb-guidelines-grid">
+    <div class="utpb-guide-card">
+      <div class="utpb-guide-title">📝 Accepted Forms</div>
+      <div class="utpb-guide-text">Short stories, poetry, and creative essays.</div>
+    </div>
+    <div class="utpb-guide-card">
+      <div class="utpb-guide-title">🌐 Language</div>
+      <div class="utpb-guide-text">Submissions must be written in Spanish.</div>
+    </div>
+    <div class="utpb-guide-card">
+      <div class="utpb-guide-title">📄 Formatting</div>
+      <div class="utpb-guide-text">Double-spaced text using a 12-point font.</div>
+    </div>
+    <div class="utpb-guide-card">
+      <div class="utpb-guide-title">✨ Originality</div>
+      <div class="utpb-guide-text">Works must not have been published previously.</div>
+    </div>
+    <div class="utpb-guide-card">
+      <div class="utpb-guide-title">📏 Length</div>
+      <div class="utpb-guide-text">Between 2 pages minimum and 10 pages maximum.</div>
+    </div>
+  </div>
+
+  <!-- Fechas Clave -->
+  <div class="utpb-section-title">Important Dates</div>
+  <div class="utpb-dates-container">
+    <div class="utpb-date-card">
+      <div class="utpb-date-label">Submissions Due</div>
+      <div class="utpb-date-value">April 18, <span>2027</span></div>
+    </div>
+    <div class="utpb-date-card">
+      <div class="utpb-date-label">Finalists Notification</div>
+      <div class="utpb-date-value">April 28, <span>2027</span></div>
+    </div>
+  </div>
+
+  <!-- Sección de Envío -->
+  <div class="utpb-form-wrapper">
+    <h3 style="font-size: 1.35rem; margin-bottom: 8px; color: #111;">Ready to Submit Your Work?</h3>
+    <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Click the button below to email your submission directly to Dr. Tarco.</p>
+    <a href="mailto:tarco_h@utpb.edu?subject=UTPB%20Spanish%20Creative%20Writing%20Submission%202027" class="utpb-btn-submit">
+      Submit Your Work
+    </a>
+  </div>
+
+  <!-- Contacto Footer -->
+  <div class="utpb-contact-footer">
+    For additional information, please reach out to Dr. Tarco at <a href="mailto:tarco_h@utpb.edu">tarco_h@utpb.edu</a>.
+  </div>
+
+</div>
+
+</body>
+</html>
