@@ -28,7 +28,6 @@
             line-height: 1.6;
         }
 
-        /* Contenedor principal con ancho máximo controlado para que no se expanda demasiado */
         .page-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -41,10 +40,17 @@
             margin-bottom: 30px;
         }
 
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
         .logo {
-            width: 90px;
-            height: auto;
-            margin-bottom: 12px;
+            max-height: 75px;
+            width: auto;
         }
 
         .dept-name {
@@ -301,8 +307,10 @@
 
     <div class="page-wrapper">
         <header>
-            <!-- Asegúrate de que el nombre del archivo de la imagen del halcón coincida exactamente aquí -->
-            <img src="logo_utpb.png" alt="UTPB Logo" class="logo" onerror="this.style.display='none'">
+            <div class="logo-container">
+                <!-- Cambia 'logo__UTPB.jpg' por el nombre exacto de tu archivo de imagen en GitHub si es distinto -->
+                <img src="logo__UTPB.jpg" alt="UTPB Logo" class="logo" onerror="this.style.display='none'">
+            </div>
             <div class="dept-name">Department of Literature and Languages</div>
             <h1>THE UNIVERSITY OF TEXAS PERMIAN BASIN</h1>
             <div class="subtitle">Spanish Creative Writing Competition for High School Students</div>
