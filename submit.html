@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Work - UTPB Spanish Creative Writing Competition</title>
+    <style>
+        :root {
+            --utpb-orange: #c85200;
+            --utpb-orange-light: #fff6f0;
+            --utpb-orange-border: #f5d0b5;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --card-border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--utpb-orange);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            max-height: 95px;
+            width: auto;
+        }
+
+        .dept-name {
+            color: var(--utpb-orange);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+        }
+
+        /* Reminder Notice */
+        .reminder-box {
+            background-color: var(--utpb-orange-light);
+            border: 1px solid var(--utpb-orange-border);
+            border-left: 5px solid var(--utpb-orange);
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 26px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .reminder-box strong {
+            color: var(--utpb-orange);
+        }
+
+        /* Form Card */
+        .form-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 28px 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 560px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        label span.req {
+            color: var(--utpb-orange);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 11px 14px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--utpb-orange);
+            box-shadow: 0 0 0 3px rgba(200, 82, 0, 0.12);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--utpb-orange);
+            color: #ffffff;
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            padding: 14px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #a64300;
+        }
+
+        /* Fallback box if mailto doesn't open automatically */
+        .fallback-box {
+            display: none;
+            background-color: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .fallback-box h3 {
+            font-size: 1rem;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .fallback-box p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .preview-text {
+            background-color: var(--bg-light);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 14px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .btn-copy {
+            background-color: #1f2937;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-copy:hover {
+            background-color: #111827;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 16px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+        }
+
+        footer a {
+            color: var(--utpb-orange);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <nav class="top-nav">
+            <a href="index.html" class="back-link">&larr; Back to Competition Guidelines</a>
+        </nav>
+
+        <header>
+            <div class="logo-container">
+                <img src="logo_UTPB.jpg" alt="UTPB Logo" class="logo" onerror="this.style.display='none'">
+            </div>
+            <div class="dept-name">Department of Literature and Languages</div>
+            <h1>Submission Form</h1>
+            <div class="subtitle">UTPB Spanish Creative Writing Competition</div>
+        </header>
+
+        <main>
+            <div class="reminder-box">
+                <strong>Important Step:</strong> Fill out your information below and click <strong>Prepare Submission Email</strong>. Your email app will open automatically with all your details ready. <strong>Remember to attach your Word (.doc/.docx) or PDF file before hitting Send!</strong>
+            </div>
+
+            <div class="form-card">
+                <form id="submissionForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Full Name <span class="req">*</span></label>
+                        <input type="text" id="studentName" name="studentName" placeholder="e.g., Sofia Martinez" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="highSchool">High School <span class="req">*</span></label>
+                            <input type="text" id="highSchool" name="highSchool" placeholder="e.g., Permian High School" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">Grade Level <span class="req">*</span></label>
+                            <select id="grade" name="grade" required>
+                                <option value="" disabled selected>Select your grade</option>
+                                <option value="11th Grade (Junior)">11th Grade (Junior)</option>
+                                <option value="12th Grade (Senior)">12th Grade (Senior)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="teacherName">Spanish Teacher's Name <span class="req">*</span></label>
+                            <input type="text" id="teacherName" name="teacherName" placeholder="e.g., Sr. Gomez" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genre">Literary Genre <span class="req">*</span></label>
+                            <select id="genre" name="genre" required>
+                                <option value="" disabled selected>Select a genre</option>
+                                <option value="Short Story (Cuento)">Short Story (Cuento)</option>
+                                <option value="Chronicle (Crónica)">Chronicle (Crónica)</option>
+                                <option value="Poetry (Poesía)">Poetry (Poesía)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workTitle">Title of Your Work (in Spanish) <span class="req">*</span></label>
+                        <input type="text" id="workTitle" name="workTitle" placeholder="e.g., Las palabras de mi abuela" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">PREPARE SUBMISSION EMAIL</button>
+                </form>
+            </div>
+
+            <!-- Respaldo por si el estudiante usa correo web en el navegador y no tiene app configurada -->
+            <div class="fallback-box" id="fallbackBox">
+                <h3>Using Gmail, Yahoo, or School Webmail?</h3>
+                <p>If your email app did not open automatically, copy the text below and send it to <strong>tarco_h@utpb.edu</strong> with your file attached:</p>
+                <div class="preview-text" id="emailPreview"></div>
+                <button type="button" class="btn-copy" id="copyBtn">Copy Submission Details</button>
+            </div>
+        </main>
+
+        <footer>
+            Questions? Contact Profe Tarco at <a href="mailto:tarco_h@utpb.edu">tarco_h@utpb.edu</a>.
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const studentName = document.getElementById('studentName').value.trim();
+            const highSchool = document.getElementById('highSchool').value.trim();
+            const grade = document.getElementById('grade').value;
+            const teacherName = document.getElementById('teacherName').value.trim();
+            const genre = document.getElementById('genre').value;
+            const workTitle = document.getElementById('workTitle').value.trim();
+
+            const subject = `UTPB Spanish Creative Writing Submission - ${studentName} (${highSchool})`;
+            const body = 
+`Estimado Profe Tarco,
+
+Adjunto mi trabajo para el concurso UTPB Spanish Creative Writing Competition ("The Spanish Language in My Life / El español en mi vida").
+
+--- PARTICIPANT INFORMATION ---
+Student Name: ${studentName}
+High School: ${highSchool}
+Grade: ${grade}
+Spanish Teacher: ${teacherName}
+Genre: ${genre}
+Title of Work: "${workTitle}"
+
+[IMPORTANTE: No olvides adjuntar tu documento en Word o PDF antes de enviar este correo]`;
+
+            // Mostrar respaldo visual para estudiantes que usan Gmail/Outlook web en Chromebooks escolares
+            document.getElementById('emailPreview').textContent = `To: tarco_h@utpb.edu\nSubject: ${subject}\n\n${body}`;
+            document.getElementById('fallbackBox').style.display = 'block';
+
+            // Abrir cliente de correo predeterminado
+            const mailtoLink = `mailto:tarco_h@utpb.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        });
+
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const textToCopy = document.getElementById('emailPreview').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy Submission Details'; }, 2500);
+            });
+        });
+    </script>
+
+</body>
+</html>
